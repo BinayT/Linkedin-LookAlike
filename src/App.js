@@ -1,10 +1,17 @@
 import React from 'react';
-import './App.css';
+
+import Header from './components/Header/Header';
+import './css/App.css';
 
 function App() {
   return (
     <div className='app'>
-      <h1>Linkedin Lookalike App</h1>L
+      {/* Header */}
+      <Header />
+      {/* Sidebar */}
+      {/* Body */}
+      {/* Feed */}
+      {/* Widget */}
     </div>
   );
 }
