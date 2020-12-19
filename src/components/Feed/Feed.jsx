@@ -9,6 +9,7 @@ import {
 
 import './Feed.scss';
 import InputOptions from './InputOptions/InputOptions';
+import Post from './Post/Post';
 
 function Feed() {
   return (
@@ -21,6 +22,7 @@ function Feed() {
             <button type='submit'>Send</button>
           </form>
         </div>
+
         <div className='feed__inputOptions'>
           <InputOptions title='Photo' color='#70b5f9' Icon={ImageOutlined} />
           <InputOptions
@@ -40,7 +42,12 @@ function Feed() {
           />
         </div>
       </div>
-      ok
+      <Post
+        photoUrl='https://media-exp1.licdn.com/dms/image/C4D03AQEAcfgA635OGg/profile-displayphoto-shrink_100_100/0/1594928442682?e=1613606400&v=beta&t=Ra5iovLQ4puVS9gDoRf6qSr0Y45m1vl62--uUxwPtGg'
+        name='Binay'
+        message='What up?'
+        description='Nicee'
+      />
     </div>
   );
 }
