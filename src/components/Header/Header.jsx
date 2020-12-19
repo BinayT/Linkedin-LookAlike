@@ -8,8 +8,8 @@ import {
   WorkOutlineOutlined,
 } from '@material-ui/icons';
 
-import '../../css/Header/Header.css';
-import HeaderOptions from './HeaderOptions';
+import './Header.scss';
+import HeaderOptions from './HeaderOptions/HeaderOptions';
 
 function Header() {
   return (

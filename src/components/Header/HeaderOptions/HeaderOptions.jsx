@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar } from '@material-ui/core';
 
-import '../../css/Header/HeaderOptions/HeaderOptions.css';
+import './HeaderOptions.scss';
 
 function HeaderOptions({ avatar, Icon, title }) {
   return (
