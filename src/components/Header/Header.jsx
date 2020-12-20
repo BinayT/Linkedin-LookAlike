@@ -1,17 +1,21 @@
 import React from 'react';
 import {
   ChatBubbleOutlined,
+  ExitToApp,
   HomeOutlined,
   NotificationsNoneOutlined,
   PeopleAltOutlined,
   SearchOutlined,
   WorkOutlineOutlined,
 } from '@material-ui/icons';
+import { useDispatch } from 'react-redux';
 
 import './Header.scss';
 import HeaderOptions from './HeaderOptions/HeaderOptions';
+import { logout } from '../../features/userSlice';
 
 function Header() {
+  const dispatch = useDispatch();
   return (
     <div className='header'>
       <div className='header__left'>
@@ -36,6 +40,7 @@ function Header() {
           avatar='https://media-exp1.licdn.com/dms/image/C4D03AQEAcfgA635OGg/profile-displayphoto-shrink_100_100/0/1594928442682?e=1613606400&v=beta&t=Ra5iovLQ4puVS9gDoRf6qSr0Y45m1vl62--uUxwPtGg'
           title='Binay Timilsina'
         />
+        <ExitToApp onClick={dispatch(logout())} />
       </div>
     </div>
   );
