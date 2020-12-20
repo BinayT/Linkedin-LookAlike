@@ -10,11 +10,11 @@ import {
 import './Post.scss';
 import InputOptions from '../InputOptions/InputOptions';
 
-function Post({ name, description, message, photoUrl }) {
+function Post({ name, description, message, photoURL }) {
   return (
     <div className='post'>
       <div className='post__header'>
-        <Avatar src={photoUrl} />
+        <Avatar src={photoURL} />
         <div className='post__info'>
           <h2>{name}</h2>
           <p>{description}</p>

@@ -6,16 +6,20 @@ import {
   ImageOutlined,
   PlayCircleFilledOutlined,
 } from '@material-ui/icons';
+import { useSelector } from 'react-redux';
 import firebase from 'firebase';
 
 import './Feed.scss';
 import InputOptions from './InputOptions/InputOptions';
 import Post from './Post/Post';
 import { db } from '../../firebase';
+import { selectUser } from '../../features/userSlice';
 
 function Feed() {
   const [input, setInput] = useState('');
   const [posts, setPosts] = useState([]);
+
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     db.collection('posts')
@@ -34,11 +38,10 @@ function Feed() {
   const sendPost = (e) => {
     e.preventDefault();
     db.collection('posts').add({
-      name: 'Binay T',
-      description: 'This is a test',
+      name: user.displayName,
+      description: user.email,
       message: input,
-      photoUrl:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQEAcfgA635OGg/profile-displayphoto-shrink_100_100/0/1594928442682?e=1613606400&v=beta&t=Ra5iovLQ4puVS9gDoRf6qSr0Y45m1vl62--uUxwPtGg',
+      photoURL: user.photoURL,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setInput('');
@@ -81,13 +84,13 @@ function Feed() {
           />
         </div>
       </div>
-      {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+      {posts.map(({ id, data: { name, description, message, photoURL } }) => (
         <Post
           key={id}
           name={name}
           description={description}
           message={message}
-          photoUrl={photoUrl}
+          photoURL={photoURL}
         />
       ))}
       {/* <Post

@@ -8,15 +8,16 @@ import {
   SearchOutlined,
   WorkOutlineOutlined,
 } from '@material-ui/icons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './Header.scss';
 import HeaderOptions from './HeaderOptions/HeaderOptions';
-import { logout } from '../../features/userSlice';
+import { logout, selectUser } from '../../features/userSlice';
 import { auth } from '../../firebase';
 
 function Header() {
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   const onClick = () => {
     dispatch(logout());
@@ -43,10 +44,7 @@ function Header() {
         <HeaderOptions Icon={WorkOutlineOutlined} title='Jobs' />
         <HeaderOptions Icon={ChatBubbleOutlined} title='Messaging' />
         <HeaderOptions Icon={NotificationsNoneOutlined} title='Notifications' />
-        <HeaderOptions
-          avatar='https://media-exp1.licdn.com/dms/image/C4D03AQEAcfgA635OGg/profile-displayphoto-shrink_100_100/0/1594928442682?e=1613606400&v=beta&t=Ra5iovLQ4puVS9gDoRf6qSr0Y45m1vl62--uUxwPtGg'
-          title='Binay Timilsina'
-        />
+        <HeaderOptions avatar={user.photoURL} title={user.displayName} />
         <HeaderOptions title='Log Out' Icon={ExitToApp} onClick={onClick} />
       </div>
     </div>
