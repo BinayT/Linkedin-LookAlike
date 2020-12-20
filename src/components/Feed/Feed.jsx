@@ -8,6 +8,7 @@ import {
 } from '@material-ui/icons';
 import { useSelector } from 'react-redux';
 import firebase from 'firebase';
+import FlipMove from 'react-flip-move';
 
 import './Feed.scss';
 import InputOptions from './InputOptions/InputOptions';
@@ -84,21 +85,17 @@ function Feed() {
           />
         </div>
       </div>
-      {posts.map(({ id, data: { name, description, message, photoURL } }) => (
-        <Post
-          key={id}
-          name={name}
-          description={description}
-          message={message}
-          photoURL={photoURL ? photoURL : 'photo.png'}
-        />
-      ))}
-      {/* <Post
-        photoUrl='https://media-exp1.licdn.com/dms/image/C4D03AQEAcfgA635OGg/profile-displayphoto-shrink_100_100/0/1594928442682?e=1613606400&v=beta&t=Ra5iovLQ4puVS9gDoRf6qSr0Y45m1vl62--uUxwPtGg'
-        name='Binay'
-        message='What up?'
-        description='Nicee'
-      /> */}
+      <FlipMove>
+        {posts.map(({ id, data: { name, description, message, photoURL } }) => (
+          <Post
+            key={id}
+            name={name}
+            description={description}
+            message={message}
+            photoURL={photoURL ? photoURL : 'photo.png'}
+          />
+        ))}
+      </FlipMove>
     </div>
   );
 }
