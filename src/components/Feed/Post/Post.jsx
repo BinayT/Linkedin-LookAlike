@@ -1,7 +1,14 @@
 import React from 'react';
 import { Avatar } from '@material-ui/core';
+import {
+  ShareOutlined,
+  TextsmsOutlined,
+  ThumbUpOutlined,
+  SendOutlined,
+} from '@material-ui/icons';
 
 import './Post.scss';
+import InputOptions from '../InputOptions/InputOptions';
 
 function Post({ name, description, message, photoUrl }) {
   return (
@@ -18,7 +25,12 @@ function Post({ name, description, message, photoUrl }) {
         <p>{message}</p>
       </div>
 
-      <div className='post__buttons'></div>
+      <div className='post__buttons'>
+        <InputOptions title='Like' color='gray' Icon={ThumbUpOutlined} />
+        <InputOptions title='Comment' color='gray' Icon={TextsmsOutlined} />
+        <InputOptions title='Share' color='gray' Icon={ShareOutlined} />
+        <InputOptions title='Send' color='gray' Icon={SendOutlined} />
+      </div>
     </div>
   );
 }
