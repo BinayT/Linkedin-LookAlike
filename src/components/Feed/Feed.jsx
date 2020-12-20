@@ -90,7 +90,7 @@ function Feed() {
           name={name}
           description={description}
           message={message}
-          photoURL={photoURL}
+          photoURL={photoURL ? photoURL : 'photo.png'}
         />
       ))}
       {/* <Post

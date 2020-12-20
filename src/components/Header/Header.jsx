@@ -44,7 +44,10 @@ function Header() {
         <HeaderOptions Icon={WorkOutlineOutlined} title='Jobs' />
         <HeaderOptions Icon={ChatBubbleOutlined} title='Messaging' />
         <HeaderOptions Icon={NotificationsNoneOutlined} title='Notifications' />
-        <HeaderOptions avatar={user.photoURL} title={user.displayName} />
+        <HeaderOptions
+          avatar={user.photoURL ? user.photoURL : 'photo.png'}
+          title={user.displayName}
+        />
         <HeaderOptions title='Log Out' Icon={ExitToApp} onClick={onClick} />
       </div>
     </div>

@@ -20,7 +20,10 @@ function Sidebar() {
     <div className='sidebar'>
       <div className='sidebar__top'>
         <img src='code.png' alt='' />
-        <Avatar className='sidebar__avatar' src={user.photoURL} />
+        <Avatar
+          className='sidebar__avatar'
+          src={user.photoURL ? user.photoURL : 'photo.png'}
+        />
         <h2>{user.displayName}</h2>
         <h4>{user.email}</h4>
       </div>
