@@ -13,6 +13,7 @@
   form {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 
     input {
       width: 350px;
@@ -32,4 +33,9 @@
       border-radius: 5px;
     }
   }
+}
+
+.login__register {
+  color: #0177b7;
+  cursor: pointer;
 }
