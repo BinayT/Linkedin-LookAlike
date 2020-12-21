@@ -1,3 +1,13 @@
+# Deployed Link: https://linkedin-lookalike.web.app/
+
+# How to use the app?
+
+Go to the app & register with full name, email and password. If you want you can also put your photo URL from Google or any photo URL of your preference. `Be careful` hit the register link after you put your details since I haven't applied react-router in this app, then you'll be logged in with the name, email and photo. 
+
+If you log out, you can re-enter the app but only with email and password, no need to put the name and photoURL again since they will get saved in the DB.
+
+Enjoy the app!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
